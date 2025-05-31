@@ -1,0 +1,486 @@
+/* ==========================================================================
+   1. General Styles - สไตล์ทั่วไปสำหรับทั้งเว็บไซต์
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* ชุดฟอนต์หลัก */
+    margin: 0; /* ลบ margin เริ่มต้นของ body */
+    padding: 20px; /* ระยะห่างรอบนอกสุดของเนื้อหา */
+    background-color: #f4f7f6; /* สีพื้นหลังของหน้าเว็บ */
+    color: #333; /* สีตัวอักษรหลัก */
+    line-height: 1.6; /* ความสูงระหว่างบรรทัด */
+}
+
+.container {
+    max-width: 70%; /* ความกว้างสูงสุดของกรอบเนื้อหาหลัก (ปรับค่านี้ถ้าต้องการให้กว้างขึ้น เช่น 850px, 1200px) */
+    margin: 20px auto; /* จัดให้อยู่กึ่งกลางหน้าจอ และมีระยะห่างบน-ล่าง */
+    background-color: #fff; /* สีพื้นหลังของกรอบเนื้อหา */
+    padding: 20px 30px; /* ระยะห่างภายในกรอบเนื้อหา */
+    border-radius: 8px; /* ความโค้งมนของมุม */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูมีมิติ */
+}
+
+h1 {
+    text-align: center; /* จัดหัวข้อหลักกึ่งกลาง */
+    margin-bottom: 30px; /* ระยะห่างล่าง */
+    font-size: 1.8em; /* ขนาดตัวอักษร */
+    color: #0056b3; /* สีตัวอักษร */
+}
+
+h2 {
+    font-size: 1.5em; /* ขนาดตัวอักษร */
+    color: #0056b3; /* สีตัวอักษร */
+    border-bottom: 2px solid #007bff; /* เส้นคั่นด้านล่าง */
+    padding-bottom: 10px; /* ระยะห่างระหว่างข้อความกับเส้นคั่น */
+    margin-top: 0; /* ลบ margin บน (ถ้า h2 เป็น element แรกใน section) */
+}
+
+.section {
+    margin-bottom: 30px; /* ระยะห่างระหว่างแต่ละ section */
+    padding: 25px; /* ระยะห่างภายใน section */
+    border: 1px solid #e0e0e0; /* เส้นขอบ section */
+    border-radius: 8px; /* ความโค้งมนของมุม */
+    background-color: #ffffff; /* สีพื้นหลัง section */
+}
+
+label {
+    display: block; /* ทำให้ label ขึ้นบรรทัดใหม่ */
+    margin-bottom: 8px; /* ระยะห่างล่างของ label */
+    font-weight: 600; /* ความหนาตัวอักษร */
+    color: #495057; /* สีตัวอักษร label */
+}
+
+/* สไตล์สำหรับ input fields, textarea, และ select ทั่วไป */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+    width: 100%; /* ความกว้างเต็ม parent element */
+    padding: 12px; /* ระยะห่างภายใน */
+    margin-bottom: 18px; /* ระยะห่างล่าง */
+    border: 1px solid #ced4da; /* เส้นขอบ */
+    border-radius: 4px; /* ความโค้งมน */
+    box-sizing: border-box; /* ให้ padding และ border รวมอยู่ใน width/height */
+    font-size: 1em; /* ขนาดตัวอักษร */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* เอฟเฟกต์ตอน focus */
+}
+
+/* สไตล์เมื่อ input fields, textarea, select ถูก focus */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #80bdff; /* เปลี่ยนสีขอบ */
+    outline: 0; /* ลบ outline เริ่มต้น */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* เพิ่มเงา focus */
+}
+
+textarea {
+    min-height: 100px; /* ความสูงขั้นต่ำของ textarea */
+    resize: vertical; /* อนุญาตให้ปรับขนาดแนวตั้งเท่านั้น */
+}
+
+button {
+    padding: 12px 24px; /* ระยะห่างภายในปุ่ม */
+    background-color: #007bff; /* สีพื้นหลังปุ่มหลัก */
+    color: white; /* สีตัวอักษร */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 4px; /* ความโค้งมน */
+    cursor: pointer; /* เปลี่ยน cursor เป็นรูปมือ */
+    font-size: 1em; /* ขนาดตัวอักษร */
+    font-weight: 500; /* ความหนาตัวอักษร */
+    transition: background-color 0.2s ease, transform 0.1s ease; /* เอฟเฟกต์ */
+}
+
+button:hover {
+    background-color: #0069d9; /* สีพื้นหลังเมื่อ hover */
+    transform: translateY(-1px); /* เอฟเฟกต์ปุ่มลอยเล็กน้อย */
+}
+
+button:active {
+    transform: translateY(0px); /* เอฟเฟกต์ตอนกดปุ่ม */
+}
+
+button.secondary { /* สไตล์สำหรับปุ่มรอง */
+    background-color: #6c757d;
+}
+
+button.secondary:hover {
+    background-color: #5a6268;
+}
+
+.button-group { /* สำหรับจัดกลุ่มปุ่มให้อยู่ในแถวเดียวกัน (ถ้ามีพื้นที่) */
+    display: flex;
+    gap: 10px; /* ระยะห่างระหว่างปุ่มในกลุ่ม */
+    margin-top: 15px; /* ระยะห่างบนของกลุ่มปุ่ม */
+    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่ถ้าไม่พอ */
+}
+
+/* ==========================================================================
+   2. Search Results Styles - สไตล์สำหรับส่วนแสดงผลการค้นหา
+   ========================================================================== */
+#searchResults {
+    margin-top: 20px; /* ระยะห่างบน */
+    border: 1px solid #e0e0e0; /* เส้นขอบ */
+    border-radius: 4px; /* ความโค้งมน */
+    max-height: 200px; /* ความสูงสูงสุด (ถ้าเกินจะมี scrollbar) */
+    overflow-y: auto; /* ให้มี scrollbar แนวตั้งเมื่อเนื้อหาเกิน */
+}
+
+.user-item { /* สไตล์สำหรับแต่ละรายการผู้ใช้ในผลการค้นหา */
+    padding: 12px 15px; /* ระยะห่างภายใน */
+    border-bottom: 1px solid #f1f1f1; /* เส้นคั่นระหว่างรายการ */
+    cursor: pointer; /* เปลี่ยน cursor เป็นรูปมือ */
+    transition: background-color 0.2s ease; /* เอฟเฟกต์เมื่อ hover */
+}
+
+.user-item:hover {
+    background-color: #e9f5ff; /* สีพื้นหลังเมื่อ hover */
+}
+
+.user-item:last-child { /* ไม่ต้องมีเส้นคั่นล่างสำหรับรายการสุดท้าย */
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   3. Active Users Dashboard Styles - สไตล์สำหรับ Dashboard ผู้ใช้งานปัจจุบัน
+   ========================================================================== */
+#activeUsersDashboard table {
+    width: 100%; /* ความกว้างเต็ม */
+    border-collapse: collapse; /* เส้นขอบตารางแบบรวม */
+    margin-top: 15px; /* ระยะห่างบน */
+    font-size: 0.9em; /* ขนาดตัวอักษรในตาราง */
+}
+
+#activeUsersDashboard th,
+#activeUsersDashboard td {
+    border: 1px solid #dee2e6; /* เส้นขอบเซลล์ */
+    padding: 10px 12px; /* ระยะห่างภายในเซลล์ */
+    text-align: left; /* จัดข้อความชิดซ้าย (เป็น default ของ td, th อยู่แล้ว) */
+}
+
+#activeUsersDashboard th { /* สไตล์สำหรับหัวตาราง */
+    background-color: #e9ecef; /* สีพื้นหลังหัวตาราง */
+    color: #495057; /* สีตัวอักษรหัวตาราง */
+    font-weight: 600; /* ความหนาตัวอักษร */
+}
+
+/* ==========================================================================
+   4. Modal Styles - สไตล์สำหรับ Popup/Modal Dialog ทุกประเภท
+   ========================================================================== */
+.modal-overlay { /* พื้นหลังสีเทาโปร่งแสงด้านหลัง Modal */
+    display: none; /* ซ่อนไว้ตอนแรก (JavaScript จะควบคุมการแสดงผล) */
+    position: fixed; /* ตำแหน่งคงที่ เต็มหน้าจอ */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* สีดำโปร่งแสง 60% */
+    z-index: 999; /* ให้อยู่เหนือ element อื่นๆ */
+    justify-content: center; /* จัด Modal ให้อยู่กึ่งกลางแนวนอน */
+    align-items: center; /* จัด Modal ให้อยู่กึ่งกลางแนวตั้ง */
+    overflow-y: auto; /* ให้ scroll ได้ถ้า Modal ยาวกว่าหน้าจอ */
+    padding: 20px; /* ระยะห่างรอบนอก Modal (ถ้า Modal ชิดขอบจอ) */
+    box-sizing: border-box;
+}
+
+.modal { /* ตัวกล่อง Modal */
+    background-color: #fff; /* สีพื้นหลัง Modal */
+    padding: 30px; /* ระยะห่างภายใน Modal */
+    border-radius: 8px; /* ความโค้งมน */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); /* เงาของ Modal */
+    width: 90%; /* ความกว้าง (ยืดหยุ่นตามหน้าจอเล็ก) */
+    max-width: 550px; /* ความกว้างสูงสุด */
+    position: relative; /* สำหรับการจัดวางปุ่มปิด */
+    z-index: 1000; /* ให้อยู่เหนือ Overlay */
+    margin: auto; /* ช่วยจัดกึ่งกลางเมื่อ Overlay มี scroll */
+    display: flex; /* ใช้ Flexbox จัดโครงสร้างภายใน Modal */
+    flex-direction: column; /* ให้เรียงจากบนลงล่าง */
+}
+
+.modal-header { /* ส่วนหัวของ Modal */
+    display: flex;
+    justify-content: space-between; /* จัด Title ชิดซ้าย, ปุ่มปิดชิดขวา */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    border-bottom: 1px solid #dee2e6; /* เส้นคั่นล่าง Header */
+    padding-bottom: 15px; /* ระยะห่างล่างของ Header */
+    margin-bottom: 25px; /* ระยะห่างระหว่าง Header กับ Body */
+}
+
+.modal-header h2 { /* Title ใน Modal Header */
+    margin: 0; /* ลบ margin เริ่มต้นของ h2 */
+    color: #0056b3;
+    font-size: 1.6em;
+}
+
+.modal-close-button { /* ปุ่มปิด Modal (X) */
+    background: none;
+    border: none;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #adb5bd; /* สีปุ่มปิด */
+    padding: 0; /* ไม่มี padding */
+    line-height: 1; /* จัดให้อยู่ตรงกลางสวยงาม */
+}
+
+.modal-close-button:hover {
+    color: #495057; /* สีเมื่อ hover */
+}
+
+.modal-body { /* ส่วนเนื้อหาหลักของ Modal (เช่น ฟอร์ม) */
+    flex-grow: 1; /* ให้ส่วนนี้ยืดได้ถ้า Modal มีความสูงจำกัด */
+}
+
+.modal-footer { /* ส่วนท้ายของ Modal (เช่น ปุ่ม Submit, Cancel) */
+    text-align: right; /* จัดปุ่มชิดขวา (ถ้าไม่ใช้ Flexbox) */
+    margin-top: 25px; /* ระยะห่างบน */
+    border-top: 1px solid #dee2e6; /* เส้นคั่นบน Footer */
+    padding-top: 20px; /* ระยะห่างบนของ Footer */
+    display: flex; /* ใช้ Flexbox จัดปุ่ม */
+    justify-content: flex-end; /* จัดปุ่มชิดขวา */
+    gap: 10px; /* ระยะห่างระหว่างปุ่มใน Footer */
+}
+
+/* สไตล์สำหรับ .form-grid ที่ใช้ใน Modal */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* แต่ละช่องกว้างอย่างน้อย 180px และขยายได้ */
+    gap: 15px; /* ระยะห่างระหว่างช่องใน grid */
+    margin-bottom: 15px; /* ระยะห่างล่างของ grid */
+}
+.form-grid-triple { /* สำหรับ grid ที่ต้องการ 3 คอลัมน์พอดี */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* สไตล์สำหรับส่วนแสดงข้อมูลผู้ใช้ที่เลือก และประเภทผู้ใช้ ใน Modal */
+#selectedUserInfo_modal,
+#userTypeDisplay_modal {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #e9f5ff; /* สีพื้นหลังส่วนข้อมูลผู้ใช้ */
+    border: 1px solid #b8daff; /* เส้นขอบ */
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+#userTypeDisplay_modal { /* เน้นประเภทผู้ใช้ */
+    font-weight: bold;
+    color: #0056b3;
+}
+
+/* สไตล์สำหรับ Message Div ใน Modal ต่างๆ */
+#addUserMessage,
+#logEntryMessage,
+#logoutResponseMessage {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+    min-height: 1.2em; /* จองพื้นที่ไว้เล็กน้อยเผื่อแสดงข้อความ */
+}
+
+/* สไตล์สำหรับส่วนคืนหูฟังใน Logout Modal */
+#logoutHeadphoneSection label { /* Label หลัก "สถานะการคืนหูฟัง" */
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+#logoutHeadphoneSection div label { /* Label ของ Radio Button "คืนแล้ว", "ยังไม่คืน" */
+    font-weight: normal !important; /* ยกเลิก bold จาก label ทั่วไป */
+    margin-right: 10px;
+    display: inline; /* ให้อยู่บรรทัดเดียวกับ radio input */
+}
+#logoutHeadphoneSection input[type="radio"] { /* Radio Button */
+    width: auto; /* ขนาดตามปกติ */
+    margin-right: 5px;
+    vertical-align: middle; /* จัดให้อยู่กึ่งกลางแนวตั้งกับ Label */
+}
+
+#logoutNotes { /* Textarea สำหรับ Notes ใน Logout Modal */
+    width: 100%; /* เต็มความกว้าง */
+    min-height: 70px; /* ความสูงขั้นต่ำ */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   5. History Page Styles - สไตล์เฉพาะสำหรับหน้า history.php
+   ========================================================================== */
+.filter-section { /* ส่วน Filter วันที่ในหน้า history.php */
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f0f4f8; /* สีพื้นหลังส่วน filter */
+}
+
+.filter-row { /* แต่ละบรรทัดในส่วน Filter */
+    display: flex;
+    align-items: stretch; /* หรือ center ถ้าต้องการให้ item สูงเท่ากัน */
+    margin-bottom: 12px;
+    gap: 15px; /* ระยะห่างระหว่าง group ใน row */
+}
+.filter-row:last-child {
+    margin-bottom: 0;
+}
+
+.filter-row .label-group, /* กลุ่มของ Label ใน Filter */
+.filter-row .input-group { /* กลุ่มของ Input Date ใน Filter */
+    flex: 1; /* ให้แต่ละ group แบ่งพื้นที่เท่าๆ กัน */
+    display: flex;
+    flex-direction: column; /* ให้ label อยู่บน input (ถ้าใช้โครงสร้าง HTML แบบนั้น) */
+}
+/* ถ้า HTML ของ filter เป็น label และ input แยกบรรทัดกันอยู่แล้ว อาจจะไม่ต้องใช้ label-group/input-group */
+
+.filter-section label { /* Label ในส่วน Filter (ถ้าไม่ได้อยู่ใน .label-group) */
+    font-weight: bold;
+    color: #333;
+    /* margin-bottom: 5px; (มีจาก label ทั่วไปแล้ว) */
+}
+
+.filter-section input[type="date"] { /* Input Date ในส่วน Filter */
+    width: 100%; /* เต็มความกว้างของ parent (เช่น .input-group) */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95em;
+    box-sizing: border-box;
+}
+
+.filter-row.button-group { /* บรรทัดของปุ่ม Filter */
+    justify-content: flex-start; /* จัดปุ่มชิดซ้าย */
+}
+
+.filter-section button { /* ปุ่มในส่วน Filter */
+    padding: 10px 18px;
+}
+
+/* ตารางประวัติการใช้งาน */
+#historyTableContainer table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.9em;
+    table-layout: auto; /* หรือ fixed ถ้าต้องการควบคุมความกว้างเป๊ะๆ */
+}
+
+#historyTableContainer th,
+#historyTableContainer td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#historyTableContainer th { /* หัวตารางประวัติ */
+    background-color: #eef7ff;
+    position: sticky; /* ทำให้ header ตรึงเมื่อ scroll */
+    top: 0; /* ตำแหน่งที่จะตรึง */
+    z-index: 1; /* ให้อยู่เหนือกว่าเนื้อหาตารางเมื่อ scroll */
+}
+
+/* --- การกำหนดความกว้างคอลัมน์ในตารางประวัติ (ตัวอย่าง) --- */
+/* คุณสามารถปรับค่าเหล่านี้ได้ตามความเหมาะสมของข้อมูลของคุณ */
+#historyTableContainer th:nth-child(1), #historyTableContainer td:nth-child(1) { width: 60px; text-align: center; white-space: nowrap; } /* ลำดับ(วัน) */
+#historyTableContainer th:nth-child(2), #historyTableContainer td:nth-child(2) { width: 110px; text-align: center; white-space: nowrap; } /* วันที่ */
+#historyTableContainer th:nth-child(3), #historyTableContainer td:nth-child(3) { width: 20%; min-width: 160px; } /* ผู้ใช้งาน */
+#historyTableContainer th:nth-child(4), #historyTableContainer td:nth-child(4) { width: 90px; white-space: nowrap; text-align: center; } /* ประเภท */
+#historyTableContainer th:nth-child(5), #historyTableContainer td:nth-child(5) { width: 80px; text-align: center; white-space: nowrap; } /* เวลาเข้า */
+#historyTableContainer th:nth-child(6), #historyTableContainer td:nth-child(6) { width: 80px; text-align: center; white-space: nowrap; } /* เวลาออก */
+#historyTableContainer th:nth-child(7), #historyTableContainer td:nth-child(7) { width: 100px; text-align: center; white-space: nowrap; } /* เลขคอมฯ */
+#historyTableContainer th:nth-child(8), #historyTableContainer td:nth-child(8) { width: 100px; text-align: center; white-space: nowrap; } /* หูฟัง */
+#historyTableContainer th:nth-child(9), #historyTableContainer td:nth-child(9) { width: 90px; white-space: nowrap; text-align: center; } /* คืนหูฟัง */
+#historyTableContainer th:nth-child(10), #historyTableContainer td:nth-child(10) { width: auto; min-width: 180px; overflow-wrap: break-word; word-break: break-word; } /* รายละเอียด */
+#historyTableContainer th:nth-child(11), #historyTableContainer td:nth-child(11) { width: auto; min-width: 120px; overflow-wrap: break-word; word-break: break-word; } /* หมายเหตุ */
+
+.notes-display { /* สำหรับแสดง Notes ในตารางประวัติ */
+    white-space: pre-wrap; /* ให้ขึ้นบรรทัดใหม่ตามที่ผู้ใช้พิมพ์ \n */
+    /* max-width ไม่จำเป็นถ้า td จัดการความกว้างแล้ว */
+}
+
+/* Link กลับหน้าหลักใน history.php */
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   6. Navigation Menu Styles - สไตล์สำหรับเมนูนำทางหลัก (ถ้าใช้ include file)
+   ========================================================================== */
+nav.main-navigation {
+    background-color: #ffffff;
+    padding: 10px 25px;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-placeholder-left { /* สำหรับดันให้ links-center อยู่กลาง */
+    flex-grow: 1;
+}
+.nav-links-center { /* กลุ่มลิงก์เมนูกลาง */
+    text-align: center;
+}
+nav.main-navigation .nav-links-center a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+nav.main-navigation .nav-links-center a:hover,
+nav.main-navigation .nav-links-center a.active-nav { /* สไตล์เมื่อ hover หรือ active */
+    color: #0056b3;
+    background-color: #e9ecef;
+}
+nav.main-navigation .nav-links-center a.active-nav { /* เน้นลิงก์ของหน้าปัจจุบัน */
+    font-weight: bold;
+}
+.nav-user-info { /* ส่วนข้อมูลผู้ใช้และปุ่ม Logout */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 1; /* ให้ดันไปทางขวา */
+    justify-content: flex-end; /* จัดชิดขวา */
+}
+nav.main-navigation .nav-user-info span { /* ข้อความ "สวัสดี, ..." */
+    color: #495057;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+nav.main-navigation .nav-user-info a.logout-link { /* ปุ่ม/ลิงก์ ออกจากระบบ */
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+    padding: 6px 10px;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+nav.main-navigation .nav-user-info a.logout-link:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
